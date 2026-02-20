@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="topbar">
+    <div class="brand">
+      <h1>Student Management Dashboard</h1>
+      <p>Search, sort, and manage student records</p>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search by name...">
+
+      <!-- DROPDOWN -->
+      <div class="custom-select" id="sortSelect">
+        <div class="select-selected">Sort By</div>
+        <div class="select-items hidden">
+          <div data-value="name">Name (A–Z)</div>
+          <div data-value="age">Age (Ascending)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- TABLE  -->
+    <div class="card">
+      <div class="card-header">
+        <h2>Students</h2>
+        <span class="badge" id="countBadge">0 records</span>
+      </div>
+
+      <div class="card-body">
+        <div class="table-wrap">
+          <table id="studentTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Course</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <p id="noResults" class="hidden">No students found.</p>
+      </div>
+    </div>
+
+    <!-- FORM  -->
+    <div class="card">
+      <div class="card-header">
+        <h2>Add Student</h2>
+        <span class="badge">Live Update</span>
+      </div>
+
+      <div class="card-body">
+        <form id="studentForm">
+          <input type="text" id="name" placeholder="Name (no digits)">
+          <input type="number" id="age" placeholder="Age">
+          <input type="text" id="course" placeholder="Course">
+          <button type="submit">Add Student</button>
+          <div class="help">
+            All fields required. Name must not contain digits.
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
